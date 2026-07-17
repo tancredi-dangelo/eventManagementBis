@@ -1,4 +1,4 @@
-package tancredidangelo.eventManagementBis.eventPlanner;
+package tancredidangelo.eventManagementBis.eventCreator;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -17,7 +17,7 @@ import java.util.List;
 
 @Entity
 @Table
-public class EventPlanner extends User {
+public class EventCreator extends User {
 
     /// attribute
 
@@ -26,9 +26,9 @@ public class EventPlanner extends User {
 
     /// constructor
 
-    public EventPlanner(String name, String surname, String email, String password, List<Event> events_created) {
+    public EventCreator(String name, String surname, String email, String password) {
         super(name, surname, email, password);
-        this.events_created = events_created;
+        this.setEventCreator(true);
     }
 
 

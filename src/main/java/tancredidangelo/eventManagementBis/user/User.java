@@ -33,6 +33,9 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    private boolean isEventCreator;
+
 
     /// constructor
     public User(String name, String surname, String email, String password) {
@@ -40,6 +43,7 @@ public class User {
         this.surname = surname;
         this.email = email;
         this.password = password;
+        this.isEventCreator = false;
     }
 
 

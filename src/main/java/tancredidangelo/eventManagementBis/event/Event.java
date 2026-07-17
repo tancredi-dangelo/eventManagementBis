@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tancredidangelo.eventManagementBis.eventPlanner.EventPlanner;
+import tancredidangelo.eventManagementBis.eventCreator.EventCreator;
 
 import java.time.LocalDate;
 
@@ -38,7 +38,7 @@ public class Event {
 
     @ManyToOne
     @JoinColumn(name = "creator")
-    private EventPlanner creator;
+    private EventCreator creator;
 
 
     /// constructor
