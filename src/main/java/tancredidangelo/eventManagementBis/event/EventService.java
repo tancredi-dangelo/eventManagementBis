@@ -49,7 +49,7 @@ public class EventService {
         found.setDate(payload.date());
         found.setPlace(payload.place());
         found.setCapacity(payload.capacity());
-        
+
         return this.eventRepository.save(found);
     }
 
@@ -63,6 +63,13 @@ public class EventService {
         this.eventRepository.deleteById(id);
     }
 
+
+    public void deleteAll() {
+
+        // TODO: check for permissions
+
+        this.eventRepository.deleteAll();
+    }
 
 
 }

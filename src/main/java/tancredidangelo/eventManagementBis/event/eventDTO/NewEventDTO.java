@@ -12,6 +12,6 @@ public record NewEventDTO(
         String description,
         @Future LocalDate date,
         @NotBlank String place,
-        @Min(1) int capacity,
+        @NotBlank @Min(1) int capacity,
         EventCreator creator) {
 }
