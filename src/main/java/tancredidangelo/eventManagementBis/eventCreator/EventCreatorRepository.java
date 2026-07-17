@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EventCreatorRepository extends JpaRepository<EventCreator, Long> {
 
+    EventCreator findByEmail(String email);
+
 }

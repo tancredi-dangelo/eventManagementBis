@@ -57,4 +57,16 @@ public class EventCreatorService {
         this.eventCreatorRepository.deleteById(id);
     }
 
+    public void deleteAll() {
+
+        // TODO: check for permissions
+
+        this.eventCreatorRepository.deleteAll();
+    }
+
+
+    public EventCreator findByEmail(String email) {
+        return this.eventCreatorRepository.findByEmail(email);
+    }
+
 }
