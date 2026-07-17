@@ -1,6 +1,7 @@
 package tancredidangelo.eventManagementBis.event;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +20,7 @@ public class Event {
     /// attributes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @Column
@@ -38,16 +40,18 @@ public class Event {
 
     @ManyToOne
     @JoinColumn(name = "creator")
+    @Setter(AccessLevel.NONE)
     private EventCreator creator;
 
 
     /// constructor
-    public Event(String title, String description, LocalDate date, String place, int capacity) {
+    public Event(String title, String description, LocalDate date, String place, int capacity, EventCreator creator) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.place = place;
         this.capacity = capacity;
+        this.creator = creator;
     }
 
 

@@ -12,6 +12,8 @@ import lombok.Setter;
 
 @Entity
 @Table
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "role", discriminatorType = DiscriminatorType.STRING)
 public class User {
 
 
@@ -33,8 +35,6 @@ public class User {
     @Column
     private String password;
 
-    @Column
-    private boolean isEventCreator;
 
 
     /// constructor
@@ -43,7 +43,6 @@ public class User {
         this.surname = surname;
         this.email = email;
         this.password = password;
-        this.isEventCreator = false;
     }
 
 
