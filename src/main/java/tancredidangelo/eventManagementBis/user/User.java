@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Entity
-@Table
+@Table(name = "users")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "role", discriminatorType = DiscriminatorType.STRING)
 public class User {
